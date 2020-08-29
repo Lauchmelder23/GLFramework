@@ -1,7 +1,7 @@
 
 add_executable(example
 	"main.cpp"
-)
+ "MyWindow.hpp")
 
 target_include_directories(example PRIVATE
 	${CMAKE_SOURCE_DIR}/GLFramework/include

@@ -4,10 +4,15 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Add source to this project's executable.
-add_library (GLFramework "alibi.cpp")
+add_library (GLFramework "alibi.cpp" "window.cpp")
+
+file(GLOB vendor_SRC
+    "${CMAKE_SOURCE_DIR}/vendor/src/*.cpp"
+    "${CMAKE_SOURCE_DIR}/vendor/src/*.c"
+)
 
 target_sources(GLFramework PRIVATE
-	${CMAKE_SOURCE_DIR}/vendor/src
+	${vendor_SRC}
 )
 
 target_include_directories(GLFramework PRIVATE
